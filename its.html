@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=0
+    "
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Naviline</title>
+  </head>
+  <body onload="init()">
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <div class="header__left">
+            <div class="header__logo">
+              <img src="imgs/logo.png" alt="logo" onclick="navToMain()" />
+            </div>
+            <div class="header__search">
+              <input type="text" class="search__input" placeholder="Поиск..." />
+              <div class="search__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                >
+                  <path
+                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
+                    fill="white"
+                    fill-opacity="0.6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="header__center">
+            <div class="header__links">
+              <div href="/index.html" class="header__link">
+                <a href="/index.html" id="67">Главная</a>
+              </div>
+              <div href="/about.html" class="header__link">
+                <a href="/about.html" id="68">О компании</a>
+              </div>
+              <div href="/index.html" class="header__link">
+                <a href="/index.html#products" id="69">Продукты</a>
+              </div>
+              <div href="/index.html#62" class="header__link">
+                <a href="/index.html#62" id="70">Контакты</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="header__lang" onclick="openLanguageModal()">
+              <div class="lang__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                >
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C18.2279 28 21.25 21.9558 21.25 14.5C21.25 7.04416 18.2279 1 14.5 1C10.7721 1 7.75 7.04416 7.75 14.5C7.75 21.9558 10.7721 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28V1"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 21.25C21.9558 21.25 28 18.2279 28 14.5C28 10.7721 21.9558 7.75 14.5 7.75C7.04416 7.75 1 10.7721 1 14.5C1 18.2279 7.04416 21.25 14.5 21.25Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M1 14.5H28"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+              </div>
+              <div class="lang__text" id="lang2">RU</div>
+              <div class="language__modal" onclick="closeModal()" id="lmodal">
+                <div class="modal__inner">
+                  <div class="modal__item" onclick="changeLanguage(0)">RU</div>
+                  <div class="modal__item" onclick="changeLanguage(1)">EN</div>
+                  <div class="modal__item" onclick="changeLanguage(2)">KZ</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__menu" onclick="onMenuClick()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+              >
+                <rect width="21" height="21" fill="url(#pattern0_99_109)" />
+                <defs>
+                  <pattern
+                    id="pattern0_99_109"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_99_109" transform="scale(0.01)" />
+                  </pattern>
+                  <image
+                    id="image0_99_109"
+                    width="100"
+                    height="100"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjUlEQVR4nO3ZsQ3AMAwEMe2/dFK7N6CDQa5wlV4zAAAAAADAbR8pgsQIEiNIjCAxgsQIEiNIjCAxgsRcv/wBAAAAAAAA4BXbT31OgsQIEiNIjCAxgsQIEiNIjCAxgsRsDwUAAAAAAAAAkLX91OckSIwgMYLECBIjSIwgMYLECBIjSMz2UAAAAAAAAPOeH2tRs9OnzhAFAAAAAElFTkSuQmCC"
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__drop__menu" id="menu">
+        <div class="drop__menu__top">
+          <div class="drop__menu__logo">
+            <img src="imgs/drop__menu__logo.png" alt="" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              onclick="onCloseMenu()"
+            >
+              <rect width="21" height="21" fill="url(#pattern0_95_10)" />
+              <defs>
+                <pattern
+                  id="pattern0_95_10"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_95_10"
+                    transform="scale(0.0104167)"
+                  />
+                </pattern>
+                <image
+                  id="image0_95_10"
+                  width="96"
+                  height="96"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR4nO3cXW7TQBQF4EthJSDKT+a6FT8Kb6yC9WQRpXeYLVRCqqgQvCUzyXaAShWkwIPRpIlU1Ibaoe29Y59PylseZs7x2IltDREAAAAAAAAAAAAAAAAAQJnqmu5QwepSx/929nTXJ/dZEs8l8k8f+SiM3WMqxP5k8ESSO5TkjvMc8lz8dLBD5YTPJz5x/ffHfQupGpJxIVXDPNaL4+eTIkpYHC0XB7/45CPKcgkhVcM8xrXjj+4TWTaqaetsyV4+AcslhCvCPxs7z81fF3x0P/41CYslhAbhL1fAd7IuX7yumoilEkLD8Jcr4D1ZF2aDB2suYuZKCC3Cz3OSKd+nEoTIzyTyl6YlyJRf3fYYZcrPfeSvJRwonStBuh6+5RKkL+FbLEH6Fr6lEqSv4VsoQfoevmYJgvD1ShCEr1eCIHy9EgTh65UgCF+vBEH4eiUIwtcrQRC+XgmC8DUfkLjjNt/t7D9czZXgEb7tEgRHvl4JgvD1VoIgfL0SBOFfL2nxU7PNbQu4gfBRgoHwPVaCfvgeJeiH71FCewG3IvTIBjfWLLzy0gnyH3c1UYJi+CsoYUNyjffzUYJi+CsooaGbfJIVcGHWC38FJaxxm89wA1aCXvgrKGFJ8+2F0PeVYOHVkdDXEiyE39sSLIXfuxIsht+bEiyH3/kSZMaPurpVwV6qtsk6SfyxhPA3KiHyEVl2cPDm7mKLskLC3+B0dJrnSFaNxq/v+eR+lxR+mxIkul+mC8h85Elp4TffsozHZN3+ZPDy8m3Lyt60TxLP383cCyrBooTI4+Xp6FSi++Anuw+pEHup2s4X3Dz2PIc8l2LCPy+fL/NGflSoUU1b5s/5AAAAAAAAAAAAAAAAAAC01h9uRhW6QEMMHQAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="drop__menu__links">
+            <div class="drop__menu__link">
+              <a href="/index.html" id="71">Главная</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/about.html" id="72">О компании</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html#products" id="73">Продукты</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html" id="74">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="top__title__section itsbg mb100">
+      <div class="wrapper">
+        <div class="top__title__section__text" id="75">ИТС-Транзит</div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="single__text">
+        <span class="color__green bold title__green" id="76"
+          >Схема функциональной структуры ИТС-Транзит</span
+        >
+      </div>
+
+      <div class="scheme__img">
+        <img src="imgs/scheme.png" alt="" />
+      </div>
+
+      <div class="its__card">
+        <div class="its__card__left">
+          <div class="its__card__titles" id="77">
+            Интеллектуальная транспортная система Транзит (ИТС-Транзит)
+            предназначена для автоматизированного контроля перемещения
+            транзитных таможенных товаров, а именно
+          </div>
+          <div class="its__item__left">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <rect width="100" height="100" fill="url(#pattern0_39_57)" />
+                <defs>
+                  <pattern
+                    id="pattern0_39_57"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_39_57"
+                      transform="scale(0.015625)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_39_57"
+                    width="64"
+                    height="64"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="its__item__text" id="78">
+              Определения местоположения и контроля движения транспортных
+              средств и грузов
+            </div>
+          </div>
+
+          <div class="its__item__left">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <rect width="100" height="100" fill="url(#pattern0_40_59)" />
+                <defs>
+                  <pattern
+                    id="pattern0_40_59"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_40_59"
+                      transform="scale(0.015625)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_40_59"
+                    width="64"
+                    height="64"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="its__item__text" id="79">
+              Оценки соответствия фактического и запланированного маршрута
+              движения
+            </div>
+          </div>
+
+          <div class="its__item__left">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <rect width="100" height="100" fill="url(#pattern0_41_61)" />
+                <defs>
+                  <pattern
+                    id="pattern0_41_61"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_41_61"
+                      transform="scale(0.015625)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_41_61"
+                    width="64"
+                    height="64"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="its__item__text" id="80">
+              Cоблюдения режима перемещения таможенных товаров (грузов)
+            </div>
+          </div>
+
+          <div class="its__item__left">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <rect width="100" height="100" fill="url(#pattern0_41_63)" />
+                <defs>
+                  <pattern
+                    id="pattern0_41_63"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_41_63"
+                      transform="scale(0.015625)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_41_63"
+                    width="64"
+                    height="64"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="its__item__text" id="81">
+              Контроля сохранности грузов за счет использования электронных
+              запорно-пломбирующих устройств (электронных пломб).
+            </div>
+          </div>
+
+          <div class="single__text ttt" id="82">
+            Интеллектуальная транспортная система Транзит (ИТС-Транзит) состоит
+            из трех подсистем:
+          </div>
+
+          <div class="text__its">
+            <div class="left_text_its">1</div>
+            <div class="right_text_its" id="83">
+              Электронная пломба (ЭП) – бортовой терминал сбора и передачи
+              данных об объекте наблюдения с запорно-пломбировочным устройством,
+              устанавливаемый на грузовой отсек транспортного средства (ТС);
+            </div>
+          </div>
+
+          <div class="text__its">
+            <div class="left_text_its">2</div>
+            <div class="right_text_its" id="84">
+              Центр обработки данных (ЦОД) – подсистема приема данных от
+              электронной пломбы, обработки и хранения данных, и выдачи данных в
+              информационный портал;
+            </div>
+          </div>
+
+          <div class="text__its">
+            <div class="left_text_its">3</div>
+            <div class="right_text_its" id="85">
+              Информационный портал (ИП) – подсистема отображения (визуализации)
+              данных и выдачи информации пользователям. Информационный портал
+              также осуществляет регистрацию и ведение реестра пользователей
+              системы, установку и регистрацию, и снятие с регистрации
+              электронной пломбы.
+            </div>
+          </div>
+
+          <div class="single__text ttt mt10">
+            <span id="86"> </span>
+            <br />
+            <span class="color__green" id="87"
+              >механического запорно-пломбировочного устройства с электронным
+              контролем целостности запорного троса и корпуса пломбы, а также
+              функции бортового терминала сбора и передачи данных о состоянии
+              объекта.</span
+            ><br /><br />
+            <div class="liness">
+              <div class="greendot mr10 ll"></div>
+              <div id="88">
+                ЭП устанавливается на петли дверей грузового отсека
+                транспортного средства, запирает и контролирует закрытое
+                состояние дверей на маршруте движения
+              </div>
+            </div>
+            <br /><br />
+            <span class="greendot mr10"></span>
+            <span id="89">
+              ЭП обеспечивает измерение координат местоположения объекта по
+              сигналам навигационных спутниковых систем ГЛОНАСС/GPS, измерение
+              параметров объекта с использованием датчиков, сбор данных с
+              датчиков, хранение данных во встроенной памяти и передачу данных в
+              ЦОД по каналам мобильной сотовой связи GSM или спутниковой связи
+              Iridium, в случае недоступности сотовой связи.
+            </span>
+          </div>
+        </div>
+
+        <div class="its__card__right">
+          <div class="oneTableView">
+            <div class="its__card__title" id="90">
+              Основные комплектующие электронной пломбы:
+            </div>
+            <div class="table">
+              <div class="table__item" id="91">
+                Модуль ГНСС навигации GPS/ГЛОНАСС
+              </div>
+              <div class="table__item" id="92">
+                Модуль спутниковой связи IRIDIUM
+              </div>
+              <div class="table__item" id="93">Модуль сотовой связи GSM</div>
+              <div class="table__item" id="94">Карта памяти</div>
+              <div class="table__item" id="95">Аккумуляторная батарея</div>
+              <div class="table__item" id="96">Датчик контроля троса</div>
+            </div>
+          </div>
+
+          <div class="oneTableView">
+            <div class="its__card__title" id="97">
+              Технические и эксплуатационные характеристики электронной пломбы:
+            </div>
+            <div class="table">
+              <div class="table__item" id="98">
+                Время автономной работы – 45 суток (при периоде передачи данных
+                – 30 минут);
+              </div>
+              <div class="table__item" id="99">
+                Время полной зарядки – 2 часа;
+              </div>
+              <div class="table__item" id="100">
+                Беспроводная зарядка – есть;
+              </div>
+              <div class="table__item" id="101">Защищенный корпус – есть;</div>
+              <div class="table__item" id="102">
+                Рабочая температура окружающей среды минимальная – минус 40 °С;
+              </div>
+              <div class="table__item" id="103">
+                Рабочая температура окружающей среды максимальная – плюс 60 °С;
+              </div>
+              <div class="table__item" id="104">
+                Датчик сигнализации о вскрытии пломбы – есть;
+              </div>
+              <div class="table__item" id="105">
+                Автоматическое оповещение о вскрытии пломбы и/или разрыве троса
+                – есть;
+              </div>
+              <div class="table__item" id="106">
+                Спутниковая навигация ГЛОНАСС/GPS – есть;
+              </div>
+              <div class="table__item" id="107">
+                Передача данных по каналам сотовой связи GSM – есть;
+              </div>
+              <div class="table__item" id="108">
+                Передача данных по каналам спутниковой связи Iridium – есть;
+              </div>
+              <div class="table__item" id="109">
+                Сохранение данных при отсутствии связи – есть;
+              </div>
+              <div class="table__item" id="110">
+                Световая индикация состояния пломбы – есть;
+              </div>
+              <div class="table__item" id="111">
+                Габаритные размеры корпуса пломбы (без троса) 90х95х54 мм;
+              </div>
+              <div class="table__item" id="112">
+                Масса пломбы (без троса) – 400 г.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line__bottom">
+        <div class="imgBottom alarmImg blimg">
+          <img src="imgs/itst2.png" alt="" />
+        </div>
+        <div class="vertical__card__its alarmImg blimt">
+          <div class="top__its" id="113">
+            Информационный портал (ИП) обеспечивает регистрацию и ведение
+            реестра пользователей ИТС-Транзит, контроль доступа пользователей к
+            информации в ИТС-Транзит, разграничение полномочий персонала в
+            управлении ИТС-Транзит, а также регистрацию и снятие с регистрации
+            ЭП. ИП обеспечивает отображение текущих и исторических данных о
+            состоянии объектов наблюдения, текущее местоположение и маршруты
+            движения объектов на карте, графики показаний датчиков ЭП, выполняет
+            экспорт данных в электронные таблицы (Excel) и текстовые файлы
+            (PDF).
+          </div>
+          <div class="bottom__its" id="114">
+            Центр обработки данных (ЦОД) выполняет функции приема и контроля
+            целостности данных о состоянии объектов от ЭП, выполняет
+            архивирование и обработку принятых данных, ведение базы данных,
+            удаление из архива устаревших данных, выдачу текущих и архивных
+            данных в информационный портал, формирование и передачу тревожных
+            сообщений о нештатных ситуациях в ИТС-Транзит на рабочие станции
+            персонала информационного портала.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p id="115">Все права защищены ©2024</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

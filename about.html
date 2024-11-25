@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=0
+    "
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Naviline</title>
+  </head>
+  <body onload="init()">
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <div class="header__left">
+            <div class="header__logo">
+              <img src="imgs/logo.png" alt="logo" onclick="navToMain()" />
+            </div>
+            <div class="header__search">
+              <input type="text" class="search__input" placeholder="Поиск..." />
+              <div class="search__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                >
+                  <path
+                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
+                    fill="white"
+                    fill-opacity="0.6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="header__center">
+            <div class="header__links">
+              <div href="/index.html" class="header__link">
+                <a href="/index.html" id="1">Главная</a>
+              </div>
+              <div href="/about.html" class="header__link">
+                <a href="/about.html" id="2">О компании</a>
+              </div>
+              <div href="/index.html" class="header__link">
+                <a href="/index.html#products" id="3">Продукты</a>
+              </div>
+              <div href="/index.html#62" class="header__link">
+                <a href="/index.html#62" id="4">Контакты</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="header__lang" onclick="openLanguageModal()">
+              <div class="lang__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                >
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C18.2279 28 21.25 21.9558 21.25 14.5C21.25 7.04416 18.2279 1 14.5 1C10.7721 1 7.75 7.04416 7.75 14.5C7.75 21.9558 10.7721 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28V1"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 21.25C21.9558 21.25 28 18.2279 28 14.5C28 10.7721 21.9558 7.75 14.5 7.75C7.04416 7.75 1 10.7721 1 14.5C1 18.2279 7.04416 21.25 14.5 21.25Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M1 14.5H28"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+              </div>
+              <div class="lang__text" id="lang">RU</div>
+              <div class="language__modal" onclick="closeModal()" id="lmodal">
+                <div class="modal__inner">
+                  <div class="modal__item" onclick="changeLanguage(0)">RU</div>
+                  <div class="modal__item" onclick="changeLanguage(1)">EN</div>
+                  <div class="modal__item" onclick="changeLanguage(2)">KZ</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__menu" onclick="onMenuClick()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+              >
+                <rect width="21" height="21" fill="url(#pattern0_99_109)" />
+                <defs>
+                  <pattern
+                    id="pattern0_99_109"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_99_109" transform="scale(0.01)" />
+                  </pattern>
+                  <image
+                    id="image0_99_109"
+                    width="100"
+                    height="100"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjUlEQVR4nO3ZsQ3AMAwEMe2/dFK7N6CDQa5wlV4zAAAAAADAbR8pgsQIEiNIjCAxgsQIEiNIjCAxgsRcv/wBAAAAAAAA4BXbT31OgsQIEiNIjCAxgsQIEiNIjCAxgsRsDwUAAAAAAAAAkLX91OckSIwgMYLECBIjSIwgMYLECBIjSMz2UAAAAAAAAPOeH2tRs9OnzhAFAAAAAElFTkSuQmCC"
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__drop__menu" id="menu">
+        <div class="drop__menu__top">
+          <div class="drop__menu__logo">
+            <img src="imgs/drop__menu__logo.png" alt="" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              onclick="onCloseMenu()"
+            >
+              <rect width="21" height="21" fill="url(#pattern0_95_10)" />
+              <defs>
+                <pattern
+                  id="pattern0_95_10"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_95_10"
+                    transform="scale(0.0104167)"
+                  />
+                </pattern>
+                <image
+                  id="image0_95_10"
+                  width="96"
+                  height="96"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR4nO3cXW7TQBQF4EthJSDKT+a6FT8Kb6yC9WQRpXeYLVRCqqgQvCUzyXaAShWkwIPRpIlU1Ibaoe29Y59PylseZs7x2IltDREAAAAAAAAAAAAAAAAAQJnqmu5QwepSx/929nTXJ/dZEs8l8k8f+SiM3WMqxP5k8ESSO5TkjvMc8lz8dLBD5YTPJz5x/ffHfQupGpJxIVXDPNaL4+eTIkpYHC0XB7/45CPKcgkhVcM8xrXjj+4TWTaqaetsyV4+AcslhCvCPxs7z81fF3x0P/41CYslhAbhL1fAd7IuX7yumoilEkLD8Jcr4D1ZF2aDB2suYuZKCC3Cz3OSKd+nEoTIzyTyl6YlyJRf3fYYZcrPfeSvJRwonStBuh6+5RKkL+FbLEH6Fr6lEqSv4VsoQfoevmYJgvD1ShCEr1eCIHy9EgTh65UgCF+vBEH4eiUIwtcrQRC+XgmC8DUfkLjjNt/t7D9czZXgEb7tEgRHvl4JgvD1VoIgfL0SBOFfL2nxU7PNbQu4gfBRgoHwPVaCfvgeJeiH71FCewG3IvTIBjfWLLzy0gnyH3c1UYJi+CsoYUNyjffzUYJi+CsooaGbfJIVcGHWC38FJaxxm89wA1aCXvgrKGFJ8+2F0PeVYOHVkdDXEiyE39sSLIXfuxIsht+bEiyH3/kSZMaPurpVwV6qtsk6SfyxhPA3KiHyEVl2cPDm7mKLskLC3+B0dJrnSFaNxq/v+eR+lxR+mxIkul+mC8h85Elp4TffsozHZN3+ZPDy8m3Lyt60TxLP383cCyrBooTI4+Xp6FSi++Anuw+pEHup2s4X3Dz2PIc8l2LCPy+fL/NGflSoUU1b5s/5AAAAAAAAAAAAAAAAAAC01h9uRhW6QEMMHQAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="drop__menu__links">
+            <div class="drop__menu__link">
+              <a href="/index.html" id="5">Главная</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/about.html" id="6">О компании</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html#products" id="7">Продукты</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html" id="8">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="top__title__section">
+      <div class="wrapper">
+        <div class="top__title__section__text" id="9">О КОМПАНИИ</div>
+      </div>
+    </div>
+    <section>
+      <div class="wrapper">
+        <div class="about__first__text">
+          <span id="10">ТОО </span><span class="color__green">«NAVILINE»</span
+          ><span id="11">
+            - молодая, динамично развивающаяся компания, ведущая разработки в
+            области инновационных технологий. Мы располагаем всеми необходимыми
+            техническими, производственными и интеллектуальными ресурсами,
+            которые позволяют нам решать самые сложные задачи в данной области.
+            В настоящее время, компания ведет работу по нескольким проектам,
+            актуальных для экономики Казахстана.
+          </span>
+        </div>
+        <div class="about__box__text__second">
+          <span id="12">
+            Компания поставила перед собой задачу по разработке и запуску в
+            производство УВЭОС. В рамках данной задачи был инициирован проект
+          </span>
+          <span class="color__green" id="13"
+            >«Разработка бортового терминала устройства вызова экстренных
+            оперативных служб (УВЭОС) и организация его производства»</span
+          >
+          <span id="14"
+            >, который осуществляется в рамках реализации грантового
+            финансирования коммерциализации РННТД 2022-2024 годы, финансируемого
+            за счет денежных средств ГУ «Комитет науки Министерства науки и
+            высшего образования Республики Казахстан».</span
+          >
+        </div>
+
+        <div class="sub__title__about" id="15">
+          УВЭОС будет удовлетворять требованиям
+        </div>
+        <div class="about__line">
+          <div class="about__icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="59"
+              height="59"
+              viewBox="0 0 59 59"
+              fill="none"
+            >
+              <rect width="59" height="59" fill="url(#pattern0_11_174)" />
+              <defs>
+                <pattern
+                  id="pattern0_11_174"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_11_174"
+                    transform="scale(0.0384615)"
+                  />
+                </pattern>
+                <image
+                  id="image0_11_174"
+                  width="26"
+                  height="26"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdElEQVR4nO3UzytEURQH8MtKlF+FpY2VOedRk4ViQzaSlT/AH+BfEDvZ0CPnzjMLNXb8BaLmnTtIspIUKaUUWU8WzDy9h3pv7pt6M+6UxXzrrd7tfu4594cQzfyHSMZFYtyy1Whfw5CMC+Ok4FMq9CTDK6nUnHHEuUq3E8NdgPx8pPB9xROtRiHJaIeR76rwwCjiFKwJyViKVgNv2RMYMIbkjqwOYnzQqlG4IEyGGHZjWrZvFJEuzBBjOYrAc/Z8uNcY4hynu6TCJ60aF2YTT0IF7JEK1/x7UW2MZMzp+wLZxMhmfqRbKrwMTg5DMaNwWluIi/OVCCl4tC+GOpNXw5iPTMBQJLamfv/7TwsxvkTHYDk8Jil0qq02hBHDoV4NbteEBBOdWf2S4SYeg42Ylt37z4+oJ0F7FFzHXMLK+1IiFyfrQmrBiGH9T0hC7HYvP9hmBKqOwceOmxoTpqMdEMZV40j4ySGGZcmw5HmipWFQMyImX/VkcrMnfITCAAAAAElFTkSuQmCC"
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="about__line__text" id="16">
+            ТР ТС 018/2011 «О безопасности колесных транспортных средств»,
+          </div>
+        </div>
+        <div class="about__line">
+          <div class="about__icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="59"
+              height="59"
+              viewBox="0 0 59 59"
+              fill="none"
+            >
+              <rect width="59" height="59" fill="url(#pattern0_11_174)" />
+              <defs>
+                <pattern
+                  id="pattern0_11_174"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_11_174"
+                    transform="scale(0.0384615)"
+                  />
+                </pattern>
+                <image
+                  id="image0_11_174"
+                  width="26"
+                  height="26"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdElEQVR4nO3UzytEURQH8MtKlF+FpY2VOedRk4ViQzaSlT/AH+BfEDvZ0CPnzjMLNXb8BaLmnTtIspIUKaUUWU8WzDy9h3pv7pt6M+6UxXzrrd7tfu4594cQzfyHSMZFYtyy1Whfw5CMC+Ok4FMq9CTDK6nUnHHEuUq3E8NdgPx8pPB9xROtRiHJaIeR76rwwCjiFKwJyViKVgNv2RMYMIbkjqwOYnzQqlG4IEyGGHZjWrZvFJEuzBBjOYrAc/Z8uNcY4hynu6TCJ60aF2YTT0IF7JEK1/x7UW2MZMzp+wLZxMhmfqRbKrwMTg5DMaNwWluIi/OVCCl4tC+GOpNXw5iPTMBQJLamfv/7TwsxvkTHYDk8Jil0qq02hBHDoV4NbteEBBOdWf2S4SYeg42Ylt37z4+oJ0F7FFzHXMLK+1IiFyfrQmrBiGH9T0hC7HYvP9hmBKqOwceOmxoTpqMdEMZV40j4ySGGZcmw5HmipWFQMyImX/VkcrMnfITCAAAAAElFTkSuQmCC"
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="about__line__text" id="17">
+            ГОСТ 33464-2015 «Устройство/система вызова экстренных оперативных
+            служб. Общие технические требования»
+          </div>
+        </div>
+        <div class="about__line">
+          <div class="about__icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="59"
+              height="59"
+              viewBox="0 0 59 59"
+              fill="none"
+            >
+              <rect width="59" height="59" fill="url(#pattern0_11_174)" />
+              <defs>
+                <pattern
+                  id="pattern0_11_174"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_11_174"
+                    transform="scale(0.0384615)"
+                  />
+                </pattern>
+                <image
+                  id="image0_11_174"
+                  width="26"
+                  height="26"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdElEQVR4nO3UzytEURQH8MtKlF+FpY2VOedRk4ViQzaSlT/AH+BfEDvZ0CPnzjMLNXb8BaLmnTtIspIUKaUUWU8WzDy9h3pv7pt6M+6UxXzrrd7tfu4594cQzfyHSMZFYtyy1Whfw5CMC+Ok4FMq9CTDK6nUnHHEuUq3E8NdgPx8pPB9xROtRiHJaIeR76rwwCjiFKwJyViKVgNv2RMYMIbkjqwOYnzQqlG4IEyGGHZjWrZvFJEuzBBjOYrAc/Z8uNcY4hynu6TCJ60aF2YTT0IF7JEK1/x7UW2MZMzp+wLZxMhmfqRbKrwMTg5DMaNwWluIi/OVCCl4tC+GOpNXw5iPTMBQJLamfv/7TwsxvkTHYDk8Jil0qq02hBHDoV4NbteEBBOdWf2S4SYeg42Ylt37z4+oJ0F7FFzHXMLK+1IiFyfrQmrBiGH9T0hC7HYvP9hmBKqOwceOmxoTpqMdEMZV40j4ySGGZcmw5HmipWFQMyImX/VkcrMnfITCAAAAAElFTkSuQmCC"
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="about__line__text" id="18">
+            ГОСТ 33465-2015 «Протокол обмена данными устройства/системы вызова
+            экстренных оперативных служб с инфраструктурой системы экстренного
+            реагирования при авариях».
+          </div>
+        </div>
+        <div class="text__about__single" id="19">
+          Будет проведена сертификация у аккредитованных сертификационных
+          лабораторий
+        </div>
+        <div class="text__about__single">
+          <span id="20">
+            Для решения данной задачи ТОО «Навилайн» совместно со стратегическим
+            партнером ДТОО «Институт космической техники и технологий» принял
+            участие и стал победителем в конкурсе на грантовое финансирование
+            наиболее перспективных проектов коммерциализации результатов научной
+            и (или) научно-технической деятельности на 2022-2024 годы по проекту
+          </span>
+          <span class="color__green" id="21"
+            >«Разработка бортового терминала - устройства вызова экстренных
+            оперативных служб (УВЭОС) и организация его производства».
+          </span>
+        </div>
+        <div class="sub__title__about" id="22">
+          Терминал имеет в своем составе:
+        </div>
+
+        <div class="about__card">
+          <div class="about__card__left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="96"
+              height="100"
+              viewBox="0 0 96 100"
+              fill="none"
+            >
+              <rect
+                x="0.577881"
+                width="94.7236"
+                height="100"
+                fill="url(#pattern0_14_186)"
+              />
+              <defs>
+                <pattern
+                  id="pattern0_14_186"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_14_186"
+                    transform="matrix(0.0164954 0 0 0.015625 -0.0278515 0)"
+                  />
+                </pattern>
+                <image
+                  id="image0_14_186"
+                  width="64"
+                  height="64"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA/JJREFUeJztm01MU0sUx/9nCrh5aoIvislbaoqBNia6MAQkGPcmmhp14xdRwLyX6MqlO9yKUkQlvpf4WaNrP2IIbTUkriwQaeLOBUqUxcPEAOUeF6XYNG2nlzPeaUt/O+6cOfM/f+7M3Ds3JZRIONoaJNBlMA6AsK3UfoaYZ6a/+zoT/5lOTKUEhccCJ4hwF0CDaQEucIj5XE/n5IjJpFoDVv7z72C3+AzGTVC6AAJdRnkUDwCKiW7dHGs9ayyhNoJxwNRghjBqgt4AwlYTAxnGmAl6A0pcKC2gmOj2UDTYK0piSo0lCOBBiQmVbgAgNKEaDAAEJlSLAcCKCTdjwT43narJAAAgZr7hxoRqMwBwaUI1GgCkTbgejgVO6wKr1QAAUMS4pg3yQolFNuoCqt0ALTUDbAuwTc0A2wJsUzPAtgDbrHsD6gzl+QTQxQa18PJse3I+uyEcD/rJ4SiQPloj5u7GL7v+PXr0yXJ2XCQS8n1tSp4m8O2VS7OsaH9feyKZHTcS929c5PqDYOoH4JcK1x53DUUDrAn5VF/n7O5um5orFBCOBZ8S82EA2PK5uS63+AyRSMj3rWk6BQBM9KyvI3GkUM47b1sal1LqPYC/ionr3T9RtEYDU4AuFiseABTzasGFis9ty+6Tj+62qTkmXHKjNK82aYIGtfBSmmOtpOp/vJDmEBuQO+e95J99H/+X5lj3u4DYgEgk5NPFOESrMcXis9uy+0jG1iE24FvT9JliQgbHWncRc4cuPhIJ+b5un1790kPM7cOjgeZCeXPj14qJbbCs8WAbrGxMPAnOMlFct2+bxiHyEXM7IPt4KzYg3+OqVwyPBpodHz5IcoingK3iAeB818S0NMe6XwNqBtgWYJuaAbYF2KZmgG0BthEbUOyFpRIQPwk6PoyFY0Fzj8KEZONM85ViR2cmMfEusJWYDxt7ZWRgbnvyDYDnplIWoyzXAAes/a5vCvEdID3nB4DB0ZY/lE/dA3BIqsct4jsgX/FA+oj7z8/+u5m/mShe6MXpQtfUd4AeSbWsBbEBps75mbw9T8hQlmuAl4gNGIn7PVuwchl+tWezNIfYgEWuPyjNsVacDUviseVTgKn/ztuWxnxNbs75iX+1K4e1utJjOv1upObDxBrgX0qp9+FYIDQwvmNT5qKbc/70NOLjqxeIjhWaWgPjOzYNRYNHllI0DtBOqfjadwGvhJQrpRhQyXeAVnspP5ubNSLFDl90AXoDFF4bkWIHrXatAcrBVQCLRuR4ywKW6aouSGvA+c6JCSI6hcoyYYGYT/Z2JSZ1gSXtAj0diYeKsReEBwBmxPJ+HzMA7i8rtaenc/JxKR1+ApFabf8K3VnMAAAAAElFTkSuQmCC"
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="about__card__right">
+            <div class="about__card__right__title" id="23">
+              SIM-карту сотового оператора Beeline
+            </div>
+            <div class="about__card__right__subtitle" id="24">
+              через которую имеется возможность осуществлять онлайн мониторинг
+              движения пассажирского автотранспорта через диспетчерские службы
+              автобусных парков
+            </div>
+          </div>
+        </div>
+
+        <div class="about__card">
+          <div class="about__card__left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="96"
+              height="100"
+              viewBox="0 0 96 100"
+              fill="none"
+            >
+              <rect
+                x="0.841797"
+                width="94.7236"
+                height="100"
+                fill="url(#pattern0_14_181)"
+              />
+              <defs>
+                <pattern
+                  id="pattern0_14_181"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_14_181"
+                    transform="translate(-0.0139532 -0.0704684) scale(0.0373101)"
+                  />
+                </pattern>
+                <image
+                  id="image0_14_181"
+                  width="30"
+                  height="30"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxElEQVR4nO2WwQ3DIAxFWaY3E3WMRJ2vdsYpZpOke7SXHiJSAsauVCX5EkJCwIP/AeHcqcPoHuCGAZ7E/lUqyDBj9IMJGBnmGuiiTCZgSid+XC8leHZsssCRu74avGr7spBK8LY7lAN/gLk+tU66IjgBpfVy5zsBs9zq1XULEPVgbjlcwM1gElwnldUof0CMwNEPUrhJxhqpMv6V1GBqnMAcjAFiLnvTjEkANs2Y/sXqQ4An6ctm8k0auesb4dtfn1O71RuGMaJmS8SJrQAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="about__card__right">
+            <div class="about__card__right__title" id="25">
+              Голосовую связь между водителем и диспетчером
+            </div>
+          </div>
+        </div>
+
+        <div class="about__card">
+          <div class="about__card__left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="96"
+              height="100"
+              viewBox="0 0 96 100"
+              fill="none"
+            >
+              <rect
+                x="0.575195"
+                width="94.7236"
+                height="100"
+                fill="url(#pattern0_14_183)"
+              />
+              <defs>
+                <pattern
+                  id="pattern0_14_183"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_14_183"
+                    transform="matrix(0.0211141 0 0 0.02 -0.0278515 0)"
+                  />
+                </pattern>
+                <image
+                  id="image0_14_183"
+                  width="50"
+                  height="50"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVR4nO2YsUqDQQzH8xCCgquLX5MqOOgj6DOIs4ugm6tbB3W7JlYHxclJcBJEaJOKz6AgOrgIWuiiq/IpYpXPSbCX436QLUN+/Lk7LgAREdrFGCuesuI1K62BV0SRxeh1oBrgEVE6/CHiU0asKFipl4RMuCimxeipQmYLvBGyTKSEnIznZNhqS2z4WNHkpRrvIqL4EsEwf5dhxeckRERxkZUeXEt4P+xstAleCFkiEkJOIhJCEkm0i4kkPlasuOteooSVtt1LlLTaMyOsdFyug0RxZdjzZP4N6dAqK92w0ZlcTo2DR0Rp4/u9jvvgXUI+Hqgj8C+B/aZhHbxLtKw+C16QLBEJkpOIBEk1CXFSbHjHXVpwLSFfMvfpiJR4lmHD2x2rz8Mn3KX1iqY+d2kOvMFZJlI4JxMpnFIy8tvHqlObBG9I5TuDB5DE8kGxCV4RxWVRvBLDk71zHB32PIO8AaZ+Lsdy+PpeAAAAAElFTkSuQmCC"
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="about__card__right">
+            <div class="about__card__right__title" id="26">
+              Возможность передачи мониторинговой информации
+            </div>
+            <div class="about__card__right__subtitle" id="27">
+              в ситуационные центры акиматов и Комитет транспорта МИИР РК.
+            </div>
+          </div>
+        </div>
+        <div class="vertical__cards">
+          <div class="vertical__card">
+            <div class="vertical__top ggg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="96"
+                height="100"
+                viewBox="0 0 96 100"
+                fill="none"
+              >
+                <rect
+                  x="0.361816"
+                  width="94.7236"
+                  height="100"
+                  fill="url(#pattern0_14_187)"
+                />
+                <defs>
+                  <pattern
+                    id="pattern0_14_187"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_14_187"
+                      transform="matrix(0.0164954 0 0 0.015625 -0.0278515 0)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_14_187"
+                    width="64"
+                    height="64"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="vertical__bottom">
+              <span id="28">
+                На сегодняшний день закончились испытания (тесты) УВЭОС ЭВАК По
+                результатам испытаний сформирован и утвержден окончательный
+                вариант промышленного образца УВЭОС. (Подробнее в разделе –
+              </span>
+              <a href="http://nvl.kz/evak.html" target="_blank" id="29"
+                >Система экстренных вызовов</a
+              >).
+            </div>
+          </div>
+
+          <div class="vertical__card">
+            <div class="vertical__top ggg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="51"
+                height="50"
+                viewBox="0 0 51 50"
+                fill="none"
+              >
+                <rect
+                  x="0.5"
+                  width="50"
+                  height="50"
+                  fill="url(#pattern0_111_51)"
+                />
+                <defs>
+                  <pattern
+                    id="pattern0_111_51"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_111_51" transform="scale(0.02)" />
+                  </pattern>
+                  <image
+                    id="image0_111_51"
+                    width="50"
+                    height="50"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO2Y224TMRCG9xE4H0K5r5KZhIh3oEjwVnCPUJoxbR+hNxQuoazGSYNUChUnlYJE4QFAKuUgwUXReL1pEu1222yT9Ur+pVGktRPP53+8YyUIvLy8vLy8TlDznUZNaVghxh9K475LQSYnWFG6Ws2GYNwtOmGVFSbHQ2AiWtwnDQ9b3WYlcEytbrMymGPqxLicXISIpXqNK7ErQZpi6wLHpbLy9CBTlnLVkTbXbijGLxLE9bnSgpCGnX6v0LBTSpB7YeMUafh50PTgF3XwdKlAJGGlcT1aF/5FYVx5udSrnpk6yANdv0mMX6PIrvE+BOOGXfNTm2tXpUcQw7btE5sL4fVzUwUZqfHPWfNlt2XX7fyPiyHOxGOtbrNCGrfs2Btaq1+YCogspBh+H4Dgn6TF+4k+mT2rNLyy52FbXBidMx9WLxHje/ub6xMHMRAa3tqk/kpEZQHvkmAMBOOmnfPhsKsQmQ3CDdLYmyjIfX3tvFhvXdiSXRx9tsCzl5POhDiR5z6nTgokCSJtTGDkmWJ8fRQnpgYyWE7ymVRCaSUndT8IXRgIHQEiVuTC8Etg6SlczAuRG+Q4EOO+licOMg6E+R7X56RJymVQLoZB4SCML44LMUmpcUEUw3PzTncAwslL47hSHqR0jjB+N5MSLnKuaDHEGdtcv6VOIoZl240fuQij5D8txsc2x+XhQY1rmX9ROh7E0BGQvaITyR2MuwLyrPBEcgesBqRrt4tPJF+0GW6Zc0IMd0vsxp2hQx85A6slOTN7kmvfCS8vLy8vryCf/gMXlyctljPkyQAAAABJRU5ErkJggg=="
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="vertical__bottom">
+              <span id="30">
+                Также, нами ведется работа по оптимизации системы мониторинга
+                транзитных грузов. (Подробнее в разделе –
+              </span>
+              <a href="http://nvl.kz/itst.html" target="_blank" id="31"
+                >ИТС Транзит</a
+              >)
+            </div>
+          </div>
+
+          <div class="vertical__card">
+            <div class="vertical__top ggg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+              >
+                <rect width="50" height="50" fill="url(#pattern0_111_52)" />
+                <defs>
+                  <pattern
+                    id="pattern0_111_52"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_111_52"
+                      transform="scale(0.0078125)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_111_52"
+                    width="128"
+                    height="128"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+            <div class="vertical__bottom">
+              <span id="32">
+                Также, в целях повышения безопасности дорожного движения при
+                выполнении международных перевозок и обеспечение эффективного
+                контроля за их исполнением, ТОО «Навилайн» приступило к
+                изготовлению карт-тахографов (бортовых контрольных устройств).
+                (Подробнее в разделе –
+              </span>
+              <a href="http://nvl.kz/tahografy.html" target="_blank" id="33"
+                >Карточки для тахографов</a
+              >)
+            </div>
+          </div>
+        </div>
+
+        <div class="summarise__text" id="34">
+          Кроме того, Компания поставила перед собой задачу по разработке и
+          запуску в производство новой модели УВЭОС, в которой будут решен
+          вопрос дефицита используемых электронных компонентов, вызванного
+          фактической остановкой процессов производства микрочипов в мире по
+          причине пандемии COVID-19 (с 2019 по 2022 годы) а также санкций против
+          РФ (2022).
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p id="35">Все права защищены ©2024</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

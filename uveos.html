@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=0
+    "
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Naviline</title>
+  </head>
+  <body onload="init()">
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <div class="header__left">
+            <div class="header__logo">
+              <img src="imgs/logo.png" alt="logo" onclick="navToMain()" />
+            </div>
+            <div class="header__search">
+              <input type="text" class="search__input" placeholder="Поиск..." />
+              <div class="search__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                >
+                  <path
+                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
+                    fill="white"
+                    fill-opacity="0.6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="header__center">
+            <div class="header__links">
+              <div href="/index.html" class="header__link">
+                <a href="/index.html" id="141">Главная</a>
+              </div>
+              <div href="/about.html" class="header__link">
+                <a href="/about.html" id="142">О компании</a>
+              </div>
+              <div href="/index.html" class="header__link">
+                <a href="/index.html#products" id="143">Продукты</a>
+              </div>
+              <div href="/index.html#62" class="header__link">
+                <a href="/index.html#62" id="144">Контакты</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="header__lang" onclick="openLanguageModal()">
+              <div class="lang__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                >
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C18.2279 28 21.25 21.9558 21.25 14.5C21.25 7.04416 18.2279 1 14.5 1C10.7721 1 7.75 7.04416 7.75 14.5C7.75 21.9558 10.7721 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28V1"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 21.25C21.9558 21.25 28 18.2279 28 14.5C28 10.7721 21.9558 7.75 14.5 7.75C7.04416 7.75 1 10.7721 1 14.5C1 18.2279 7.04416 21.25 14.5 21.25Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M1 14.5H28"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+              </div>
+              <div class="lang__text" id="lang5">RU</div>
+              <div class="language__modal" onclick="closeModal()" id="lmodal">
+                <div class="modal__inner">
+                  <div class="modal__item" onclick="changeLanguage(0)">RU</div>
+                  <div class="modal__item" onclick="changeLanguage(1)">EN</div>
+                  <div class="modal__item" onclick="changeLanguage(2)">KZ</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__menu" onclick="onMenuClick()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+              >
+                <rect width="21" height="21" fill="url(#pattern0_99_109)" />
+                <defs>
+                  <pattern
+                    id="pattern0_99_109"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_99_109" transform="scale(0.01)" />
+                  </pattern>
+                  <image
+                    id="image0_99_109"
+                    width="100"
+                    height="100"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjUlEQVR4nO3ZsQ3AMAwEMe2/dFK7N6CDQa5wlV4zAAAAAADAbR8pgsQIEiNIjCAxgsQIEiNIjCAxgsRcv/wBAAAAAAAA4BXbT31OgsQIEiNIjCAxgsQIEiNIjCAxgsRsDwUAAAAAAAAAkLX91OckSIwgMYLECBIjSIwgMYLECBIjSMz2UAAAAAAAAPOeH2tRs9OnzhAFAAAAAElFTkSuQmCC"
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__drop__menu" id="menu">
+        <div class="drop__menu__top">
+          <div class="drop__menu__logo">
+            <img src="imgs/drop__menu__logo.png" alt="" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              onclick="onCloseMenu()"
+            >
+              <rect width="21" height="21" fill="url(#pattern0_95_10)" />
+              <defs>
+                <pattern
+                  id="pattern0_95_10"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_95_10"
+                    transform="scale(0.0104167)"
+                  />
+                </pattern>
+                <image
+                  id="image0_95_10"
+                  width="96"
+                  height="96"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR4nO3cXW7TQBQF4EthJSDKT+a6FT8Kb6yC9WQRpXeYLVRCqqgQvCUzyXaAShWkwIPRpIlU1Ibaoe29Y59PylseZs7x2IltDREAAAAAAAAAAAAAAAAAQJnqmu5QwepSx/929nTXJ/dZEs8l8k8f+SiM3WMqxP5k8ESSO5TkjvMc8lz8dLBD5YTPJz5x/ffHfQupGpJxIVXDPNaL4+eTIkpYHC0XB7/45CPKcgkhVcM8xrXjj+4TWTaqaetsyV4+AcslhCvCPxs7z81fF3x0P/41CYslhAbhL1fAd7IuX7yumoilEkLD8Jcr4D1ZF2aDB2suYuZKCC3Cz3OSKd+nEoTIzyTyl6YlyJRf3fYYZcrPfeSvJRwonStBuh6+5RKkL+FbLEH6Fr6lEqSv4VsoQfoevmYJgvD1ShCEr1eCIHy9EgTh65UgCF+vBEH4eiUIwtcrQRC+XgmC8DUfkLjjNt/t7D9czZXgEb7tEgRHvl4JgvD1VoIgfL0SBOFfL2nxU7PNbQu4gfBRgoHwPVaCfvgeJeiH71FCewG3IvTIBjfWLLzy0gnyH3c1UYJi+CsoYUNyjffzUYJi+CsooaGbfJIVcGHWC38FJaxxm89wA1aCXvgrKGFJ8+2F0PeVYOHVkdDXEiyE39sSLIXfuxIsht+bEiyH3/kSZMaPurpVwV6qtsk6SfyxhPA3KiHyEVl2cPDm7mKLskLC3+B0dJrnSFaNxq/v+eR+lxR+mxIkul+mC8h85Elp4TffsozHZN3+ZPDy8m3Lyt60TxLP383cCyrBooTI4+Xp6FSi++Anuw+pEHup2s4X3Dz2PIc8l2LCPy+fL/NGflSoUU1b5s/5AAAAAAAAAAAAAAAAAAC01h9uRhW6QEMMHQAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="drop__menu__links">
+            <div class="drop__menu__link">
+              <a href="/index.html" id="145">Главная</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/about.html" id="146">О компании</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html#products" id="147">Продукты</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html" id="148">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="top__title__section uveos mb100">
+      <div class="wrapper">
+        <div class="top__title__section__text" id="149">УВЭОС</div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="uveos__title">
+        <div class="uevos__title__inner">
+          <span id="150">
+            ТОО Навилайн осуществляет продажу УВЭОС ЭВАК для установки
+          </span>
+          <span class="color__green" id="151">
+            на любые типы ввозимых автотранспортных средств.
+          </span>
+        </div>
+        <div class="uveos__cards">
+          <div class="uveos__card card1uevos">
+            <div class="uveos__card__left" id="152">
+              Устройство вызова экстренных оперативных служб (УВЭОС) «NAVILINE»
+              - бортовой терминал, предназначенный для установки в транспортные
+              средства для определения координат местоположения транспортного
+              средства и передачу сообщения при дорожно-транспортном
+              происшествии.
+            </div>
+            <div class="uveos__card__right">
+              <img src="imgs/card1.png" alt="" />
+            </div>
+          </div>
+
+          <div class="uveos__card secCard">
+            <div class="uveos__card__right">
+              <img src="imgs/card2.png" alt="" />
+            </div>
+            <div class="uveos__card__left">
+              <span id="153">
+                УВЭОС «NAVILINE» обеспечивает прием навигационных сигналов
+                систем ГЛОНАСС и GPS и передачу по сетям подвижной
+                радиотелефонной связи стандарта GSM на сервер Оператора
+                экстренного вызова при авариях и катастрофах, данных, содержащих
+                следующую информацию:</span
+              ><br />
+              <div class="liness">
+                <span class="greendot"></span>
+                <span id="154"> идентификационный номер (ICCID); </span>
+              </div>
+              <br />
+
+              <span class="greendot"></span>
+              <span id="155"> VIN код транспортного средства; </span>
+              <br />
+
+              <span class="greendot"></span>
+              <span id="156">
+                географические широта и долгота местоположения транспортного
+                средства;
+              </span>
+              <br />
+
+              <span class="greendot"></span>
+              <span id="157">
+                время и дата фиксации местоположения транспортного средства;
+              </span>
+              <br />
+
+              <span class="greendot"></span>
+              <span id="158">
+                признак нажатия тревожной кнопки (ручной или автоматический
+                режим).
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text__single" id="159">
+        Для передачи информации о чрезвычайной ситуации устройство автоматически
+        выбирает базовую станцию сотового оператора, у которого самый высокий
+        уровень сигнала в данной местности.
+      </div>
+
+      <div class="uevos__cards">
+        <div class="uveos__card">
+          <div class="uveos__card__left">
+            <img src="imgs/b2.png" alt="" />
+          </div>
+          <div class="uveos__card__right">
+            <img src="imgs/b2_1.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text__single bold" id="160">
+        УВЭОС «NAVILINE» находится в режиме ожидания и не осуществляет
+        постоянную передачу информации о нахождении автомобиля. Передача сигнала
+        о местоположении и марке автомобиля осуществляется только при нажатии
+        кнопки «SOS» или автоматически в случае ДТП или другой чрезвычайной
+        ситуации.
+      </div>
+
+      <div class="ueva__bottom__card">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <rect width="100" height="100" fill="url(#pattern0_33_170)" />
+            <defs>
+              <pattern
+                id="pattern0_33_170"
+                patternContentUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <use xlink:href="#image0_33_170" transform="scale(0.03125)" />
+              </pattern>
+              <image
+                id="image0_33_170"
+                width="32"
+                height="32"
+                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAo1JREFUWIXtl7trU2EYh583SVsoOEgluOngpUITBRcpJjGmtGPxBiraQS1pinRxljr4F4gk7VKkDi5apYOL1BAjCF2quYhSr6MJKoLaajjndaiFmnOSnNO0itDf+H3f+z4P5zu3D/7nqCKqSDM9VlWcfBzcLQanED0DtKEyJR5jYihUfLZuAslsYDNwQlQGQLtr1D5XYbLlh94Y7Cl8aFrg2v0dba2b2ntRPavQD7Q69DWAtIjcbP/OnYG+3DdXAslsYL+YMoCYp0G2OITWyheQaRWdTBzMz4igdQVSj4LvQLc1Ca0ReZ8I57avHPFYF60X3L63jcDfzYbAegiUQFP/SqCEIbFEuDCMatJJgW8N4WWP0hOP5grj6UCnKRx1UrRWV6DsUWLxSD4/ng50ml7SwNY1FtAUULKZKGHI4Xgkn0+lg12ml4xTeC2BRStbk4lwYRhDYlUSS3sezRVS6WAXXp0B/HV4C04EPltGRI6n0sGuRDRXWCHhFm7b2yogvLIp9OPVmT8k3MMB5qsHbJ4CmQUN1ZGIJaK5AoBLOILONhTwiNwzVS/V6OHHqw/HM4EYJhXTqw+cwgEw5a5VqiqqyFg2UAT21Gm1fCM6hgsU46F8oPp/wHIPiKAqjDbo53cDB1BktBr+W8w+qUxgCuGIG0idTCfC+X67iZovoor44sDr5tk6b/ysnKs1W1NgJDxXVqEX1PLouMhLn3r6Lva8+OhaAGA4lH/T4tMDQGYV8CcVfKHBSO5tvUUNvwUXuoufKl8X+hC9gt1r2ppFgdGODvPQSHiu3Gixq5PR9ezeXT41ryocwypvKHLbo57LQ5GnjrdtVUezscy+nWCcV5GTS130lpjeCTfgjSznFzSs+po0EwZJAAAAAElFTkSuQmCC"
+              />
+            </defs>
+          </svg>
+        </div>
+
+        <div class="ueva__bottom__card__text">
+          <span class="color__green" id="161">
+            УВЭОС «NAVILINE» соответствуют требованиям Технического регламента
+            Таможенного союза ТР ТС 018/2011 «О безопасности колесных
+            транспортных средств».
+          </span>
+        </div>
+      </div>
+
+      <div class="bottom__text__specs">
+        <div class="spec__line" id="162">
+          УВЭОС «NAVILINE» предназначено для эксплуатации в следующих условиях:
+        </div>
+        <div class="spec__line">
+          <div class="spec__green"></div>
+          <div class="spec__text">
+            <span id="163"> температура окружающего воздуха от минус </span>
+            <span class="color__green"> 40°С</span
+            ><span id="164"> до плюс</span>
+            <span class="color__green">85°С</span>;
+          </div>
+        </div>
+
+        <div class="spec__line">
+          <div class="spec__green"></div>
+          <div class="spec__text">
+            <span id="165"> атмосферное давление не ниже </span>
+            <span class="color__green" id="166">61кПа (457,5 мм рт. ст.)</span>;
+          </div>
+        </div>
+
+        <div class="spec__line">
+          <div class="spec__green"></div>
+          <div class="spec__text">
+            <span id="167"> относительная влажность воздуха до </span>
+            <span class="color__green">80°С</span
+            ><span id="168"> ;при температуре плюс </span>
+            <span class="color__green">25°С</span
+            ><span id="169">
+              ; (допустима эксплуатация устройства условиях повышенной
+              относительной влажности до
+            </span>
+            <span class="color__green">95°С</span
+            ><span id="170"> ; при температуре </span>
+            <span class="color__green">40°С</span
+            ><span id="171"> ;, но не более 6 суток); </span>
+          </div>
+        </div>
+      </div>
+      <div class="single__text">
+        <span class="color__green bold title__green" id="172"
+          >Возможности и технические данные УВЭОС «NAVILINE»:</span
+        >
+        <div class="bottom__cards">
+          <div class="bottom__card">
+            <div class="bottom__card__left">
+              <br /><span id="173">
+                1. Прием / передача радиосигналов в GSM / UMTS –сетях.
+              </span>
+              <br /><span id="174"> 2. Прием / передача голоса. </span>
+              <br /><span id="175">
+                3. Прием сигналов со спутников систем ГЛОНАСС и GPS и
+                определение географических координат объекта.
+              </span>
+              <br /><span id="176">
+                4. Определение в автоматическом режиме факта возникновения
+                дорожно-транспортного происшествия (ДТП).
+              </span>
+              <br /><span id="177">
+                5. Экстренный вызов в автоматическом и ручном режимах.
+              </span>
+              <br /><span id="178">
+                6. Вызов по дополнительному автономному каналу связи в обе
+                стороны.
+              </span>
+              <br /><span id="179">
+                7. Передачу минимального набора данных в диспетчерский центр о
+                состоянии объекта, его географических координатах, траектории и
+                параметрах движения.
+              </span>
+              <br /><span id="180">8.Дистанционное управление объектом.</span>
+              <br /><span id="181">9. Самодиагностика.</span> <br /><span
+                id="182"
+                >10. Работа сетях 3G и 2G.
+              </span>
+              <br /><span id="183">
+                11. Наличие батареи автономного электропитания устройства.
+              </span>
+              <br /><span id="184">
+                12. Наличие дополнительного автономного GSM канала связи.
+              </span>
+              <br /><span id="185">
+                13. Время «холодного» и «теплого» старта — 26 сек.
+              </span>
+            </div>
+            <div class="bottom__card__right">
+              <img src="imgs/bc1.png" alt="" />
+            </div>
+          </div>
+
+          <div class="bottom__card">
+            <div class="bottom__card__right">
+              <img src="imgs/bc2.png" alt="" />
+            </div>
+            <div class="bottom__card__left">
+              <br /><span id="186"> 14. Время «горячего» старта — 1 сек. </span>
+              <br /><span id="187">
+                15. Точность получения навигационных параметров — 2 м
+              </span>
+              <br /><span id="188"> 16. GSM 900/1800МГц </span> <br /><span
+                id="189"
+              >
+                17. UMTS 900/2100 МГц
+              </span>
+              <br /><span id="190">
+                18. Мощность передатчика GSM900 Class 4 (+33дБм ±2дБ)
+              </span>
+              <br /><span id="191">
+                19. Мощность передатчика GSM1800 Class 1 (+30дБм ±2дБ)
+              </span>
+              <br /><span id="192">
+                20. Мощность передатчика UMTS900/2100 Class 3 (+24дБм +1/-3дБ)
+              </span>
+              <br /><span id="193"> 21. Передача голосового трафика </span>
+              <br /><span id="194"> 22.Передача SMS </span> <br /><span
+                id="195"
+              >
+                23. Передача данных
+              </span>
+              <br /><span id="196">
+                24. Основной канал передачи данных в режиме ЭВАК через in-band
+                модем в голосовом канале
+              </span>
+              <br /><span id="197">
+                25. 2 SIM карты и встроенный SIM чип с многопрофильным
+                идентификационным модулем (устанавливается при производстве)
+              </span>
+              <br /><span id="198"> 26. Внешние антенны GSM, GPS/ГЛОНАСС </span>
+              <br /><span id="199">
+                27.Внутренняя энергонезависимая память 16 Мбайт
+              </span>
+              <br /><span id="200">
+                28. Количество записей во внутреннюю память – 150000
+              </span>
+              <br /><span id="201">
+                29. Интерфейс связи с компьютером USB 2.0
+              </span>
+              <br /><span id="202">
+                30. Напряжение питания УВЭОС – 9-40 В
+              </span>
+              <br /><span id="203">
+                31. Температурный диапазон эксплуатации от – 40 до +85°С
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p id="204">Все права защищены ©2024</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=0
+    "
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Naviline</title>
+  </head>
+  <body onload="init()">
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <div class="header__left">
+            <div class="header__logo">
+              <img src="imgs/logo.png" alt="logo" onclick="navToMain()" />
+            </div>
+            <div class="header__search">
+              <input type="text" class="search__input" placeholder="Поиск..." />
+              <div class="search__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                >
+                  <path
+                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
+                    fill="white"
+                    fill-opacity="0.6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="header__center">
+            <div class="header__links">
+              <div href="/index.html" class="header__link">
+                <a href="/index.html" id="36">Главная</a>
+              </div>
+              <div href="/about.html" class="header__link">
+                <a href="/about.html" id="37">О компании</a>
+              </div>
+              <div href="/index.html" class="header__link">
+                <a href="/index.html#products" id="38">Продукты</a>
+              </div>
+              <div href="/index.html#62" class="header__link">
+                <a href="/index.html#62" id="39">Контакты</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="header__lang" onclick="openLanguageModal()">
+              <div class="lang__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                >
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C18.2279 28 21.25 21.9558 21.25 14.5C21.25 7.04416 18.2279 1 14.5 1C10.7721 1 7.75 7.04416 7.75 14.5C7.75 21.9558 10.7721 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28V1"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 21.25C21.9558 21.25 28 18.2279 28 14.5C28 10.7721 21.9558 7.75 14.5 7.75C7.04416 7.75 1 10.7721 1 14.5C1 18.2279 7.04416 21.25 14.5 21.25Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M1 14.5H28"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+              </div>
+              <div class="lang__text" id="lang2">RU</div>
+              <div class="language__modal" onclick="closeModal()" id="lmodal">
+                <div class="modal__inner">
+                  <div class="modal__item" onclick="changeLanguage(0)">RU</div>
+                  <div class="modal__item" onclick="changeLanguage(1)">EN</div>
+                  <div class="modal__item" onclick="changeLanguage(2)">KZ</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__menu" onclick="onMenuClick()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+              >
+                <rect width="21" height="21" fill="url(#pattern0_99_109)" />
+                <defs>
+                  <pattern
+                    id="pattern0_99_109"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_99_109" transform="scale(0.01)" />
+                  </pattern>
+                  <image
+                    id="image0_99_109"
+                    width="100"
+                    height="100"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjUlEQVR4nO3ZsQ3AMAwEMe2/dFK7N6CDQa5wlV4zAAAAAADAbR8pgsQIEiNIjCAxgsQIEiNIjCAxgsRcv/wBAAAAAAAA4BXbT31OgsQIEiNIjCAxgsQIEiNIjCAxgsRsDwUAAAAAAAAAkLX91OckSIwgMYLECBIjSIwgMYLECBIjSMz2UAAAAAAAAPOeH2tRs9OnzhAFAAAAAElFTkSuQmCC"
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__drop__menu" id="menu">
+        <div class="drop__menu__top">
+          <div class="drop__menu__logo">
+            <img src="imgs/drop__menu__logo.png" alt="" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              onclick="onCloseMenu()"
+            >
+              <rect width="21" height="21" fill="url(#pattern0_95_10)" />
+              <defs>
+                <pattern
+                  id="pattern0_95_10"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_95_10"
+                    transform="scale(0.0104167)"
+                  />
+                </pattern>
+                <image
+                  id="image0_95_10"
+                  width="96"
+                  height="96"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR4nO3cXW7TQBQF4EthJSDKT+a6FT8Kb6yC9WQRpXeYLVRCqqgQvCUzyXaAShWkwIPRpIlU1Ibaoe29Y59PylseZs7x2IltDREAAAAAAAAAAAAAAAAAQJnqmu5QwepSx/929nTXJ/dZEs8l8k8f+SiM3WMqxP5k8ESSO5TkjvMc8lz8dLBD5YTPJz5x/ffHfQupGpJxIVXDPNaL4+eTIkpYHC0XB7/45CPKcgkhVcM8xrXjj+4TWTaqaetsyV4+AcslhCvCPxs7z81fF3x0P/41CYslhAbhL1fAd7IuX7yumoilEkLD8Jcr4D1ZF2aDB2suYuZKCC3Cz3OSKd+nEoTIzyTyl6YlyJRf3fYYZcrPfeSvJRwonStBuh6+5RKkL+FbLEH6Fr6lEqSv4VsoQfoevmYJgvD1ShCEr1eCIHy9EgTh65UgCF+vBEH4eiUIwtcrQRC+XgmC8DUfkLjjNt/t7D9czZXgEb7tEgRHvl4JgvD1VoIgfL0SBOFfL2nxU7PNbQu4gfBRgoHwPVaCfvgeJeiH71FCewG3IvTIBjfWLLzy0gnyH3c1UYJi+CsoYUNyjffzUYJi+CsooaGbfJIVcGHWC38FJaxxm89wA1aCXvgrKGFJ8+2F0PeVYOHVkdDXEiyE39sSLIXfuxIsht+bEiyH3/kSZMaPurpVwV6qtsk6SfyxhPA3KiHyEVl2cPDm7mKLskLC3+B0dJrnSFaNxq/v+eR+lxR+mxIkul+mC8h85Elp4TffsozHZN3+ZPDy8m3Lyt60TxLP383cCyrBooTI4+Xp6FSi++Anuw+pEHup2s4X3Dz2PIc8l2LCPy+fL/NGflSoUU1b5s/5AAAAAAAAAAAAAAAAAAC01h9uRhW6QEMMHQAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="drop__menu__links">
+            <div class="drop__menu__link">
+              <a href="/index.html" id="40">Главная</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/about.html" id="41">О компании</a>
+            </div>
+            <div class="drop__menu__link">
+              <a id="42" onclick="gtpr()">Продукты</a>
+            </div>
+            <div class="drop__menu__link">
+              <a id="43" onclick="openContact()">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="blog">
+        <div class="blog__item">
+          <div class="blog__left">
+            <div class="blog__item__header__title" id="44">эвак</div>
+            <div class="blog__main__title">
+              <span id="45"> система </span>
+              <span class="color__green" id="46">экстренных </span><br />
+              <span class="color__green" id="47">вызовов</span>
+            </div>
+            <div class="blog__main__text" id="48">
+              Система функционирует с использованием сигналов и данных
+              навигационных спутниковых систем «GPS» и «ГЛОНАСС»
+            </div>
+            <div class="blog__btn__fill" id="49" onclick="gotoproducts()">
+              Подробнее>>
+            </div>
+          </div>
+          <div class="blog__right">
+            <img src="/imgs/blog1.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrapper">
+          <div class="section__title" id="50">О компании</div>
+          <div class="section__about">
+            <div class="about__left">
+              <img src="imgs/blog2.png" alt="" />
+            </div>
+            <div class="about__right">
+              <div class="about__right__text">
+                <span id="51"> ТОО </span>
+                <span class="color__green" id="52">"Навилайн"</span>
+                <span id="53">
+                  - разработки в области инновационных технологий.
+                </span>
+              </div>
+              <div class="btn__view">
+                <div class="btn__border" id="54" onclick="gotoabout()">
+                  Подробнее
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper" id="products">
+          <div class="section__title" id="55">продукты</div>
+          <div class="products__section">
+            <div class="products__line__1">
+              <div class="product__card evak">
+                <div class="product__title" id="56">Терминалы эвак</div>
+                <a class="btn__border__white" href="/uveos.html" id="57"
+                  >УЗНАТЬ ПОДРОБНЕЕ</a
+                >
+              </div>
+              <div class="product__card its">
+                <div class="product__title" id="58">ИТС/Транзит</div>
+                <a class="btn__border__white" href="/its.html" id="59"
+                  >УЗНАТЬ ПОДРОБНЕЕ</a
+                >
+              </div>
+            </div>
+            <div class="product__card__full cart">
+              <div class="product__title" id="60">
+                Выпуск карт для цифрового тахографа
+              </div>
+
+              <a class="btn__border__white cbt" href="/tahograpgh.html" id="61"
+                >УЗНАТЬ ПОДРОБНЕЕ</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          <div class="section__title" id="62">контакты</div>
+          <div class="contact">
+            <div class="contact__left">
+              <div class="phone">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                  >
+                    <rect width="50" height="50" fill="url(#pattern0_7_34)" />
+                    <defs>
+                      <pattern
+                        id="pattern0_7_34"
+                        patternContentUnits="objectBoundingBox"
+                        width="1"
+                        height="1"
+                      >
+                        <use
+                          xlink:href="#image0_7_34"
+                          transform="scale(0.02)"
+                        />
+                      </pattern>
+                      <image
+                        id="image0_7_34"
+                        width="50"
+                        height="50"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC2ElEQVR4nO2ZSWtUQRCAy10QvSiuqIgB47yqN0gkeFNEb4oXF1AQweUnCJ5yDN6MSapnEkHwZiAYt4RoYKbqTVSioBFXFBTBkzFBUREVRjrBDTNm+oV56WA+qNsMvI/qpaoaYIopJg4jtMso9bHQexa6zRFtgslE9k7NLFbKGKXin4FD5kZ6BUwGzhTWzTeCnX9LjAQrXQXfaSxsWM5CD0tJ/IwoPAi+0tqDS1jw6ZgSNoQGs1K9DHyj7UFqtlHqLUvi1365CL5hBE+4SfzIDB4AnzBCL2OJKA005VJLwRdY8UNMEXuKtYMvGKVncUVsZCTYBz7ASu3jETGCT8AHOKJj4xT5BD7AveFiVvw2DpGb4Ass2BNbxKeb3oxUuu6nltC9uiJMB18oFmGaEep3lsnjdvANk8e9btnAS+AjRZsVRS1/kweHwVeaonTAgl/KE6HBbCFYC77CgifLzwrdPdcdzgMfaeismmM/0GGv9Nj/gI8YTaVY8KNDZi7U5TbPBB8xSkcdT7EWe2CAj/Co05R/yCieAl9HQ0Yo73RJCjV4mZnW4cEEPXddZm1te2aAb2Sj1Cqj9MpxmXWcza2eC77BuRBZ6K1jPdY92j1js2WEDtlRrFH8ykqPbYmUmIyRdK2dBTvumf7fKwCWcGvJe0rosh0UJiLDEW0zSp8dZQZtbWaUrpTx+wHO0/4k+xc3GcdgxY5EJpomCrY4LzPnwCE7U6i4TKaAG1nxTWVlyB7nXc0SrKx46W8EX1daxtj3GUnXVlSmRcI1rpdmzOiDJMZKTh1mnBB6B4k9UQhlKyjTC0nCQkec+hktc9NrsAOSpjkfrHfpNM1YEkKnYULbZqX6sgcaWkoCu7zoQIenM4oSbznh/YZbVQvAr7kZ7XZcbo9sPwQ+YoUyUbiTla7ZEt6UlEDN5moWwWSg8Xr1QlsVs9J5+2BknwFZ8YVROm7b7In+vin+W74DOAoP5A+NMY8AAAAASUVORK5CYII="
+                      />
+                    </defs>
+                  </svg>
+                </div>
+                <div class="phoneText">+7 747 107 4031, +7 747 870 5254</div>
+              </div>
+              <div class="address">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                  >
+                    <rect width="50" height="50" fill="url(#pattern0_7_35)" />
+                    <defs>
+                      <pattern
+                        id="pattern0_7_35"
+                        patternContentUnits="objectBoundingBox"
+                        width="1"
+                        height="1"
+                      >
+                        <use
+                          xlink:href="#image0_7_35"
+                          transform="scale(0.02)"
+                        />
+                      </pattern>
+                      <image
+                        id="image0_7_35"
+                        width="50"
+                        height="50"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADjklEQVR4nO2ZSWgUQRSGyx0UdxG3o5g4896IjDdJ1KsgbiR48eJVEISoRz2IenAhTvJqWoMHjyMIXgSdxJlXPQYPgXiIJF6UqAdxwzV60ERqpicGzaSrO70Mkh/erV/3+6beUlUjxIz+c1EJG8jGU8TQTQoHScHXiuGgZMxLhSczKrVJ1KuyJdgmFfRIhWMmVga1MS3qRVZfep5U0EGMo6YQf2BwlBivni7smBsrBNm4XCp84BVgstW5UtiyLM6VME4lVxgFnBtIzI8cRKdTUBDjxtgeeWH7qQmjmrEjbABBptQkq5KPBMIqQGNoEKpikcwZPewMA3pBnDrYVWpYrK1TwT7JMGSYYidCB3GmsyvE9d7Eihrt+oV7B8P7oYMQw1P3XzR1sKa/jS3udQJDEYDgZ7dAdCrV8m9/tHGJQWp9Dh1EMoxMB8TKp5carMhI6CDE8MotEF3YtfxlEVpNakyELaO9FcOQLuy/fTP5xpWk4KV7akF36CDEcNm4/drYomuiXBdFaDWBkBW7GDpI1k7tMQzGvxVhd+ggN++lFkmFP0KDYBix+tILRRQixtvhgWBORKVsMXkgRJC9kR6qiHE4aAhS8FK/W0Qpycm2EFbkuIhauqWSgo8BptQnPfVFHCLGSwGCXBBxKVPauo4YvgUA8qWjkFgj4hQxnA1gNc6IuNVValhMjK/9Q8AbXW+iHkQKjvluuYxHRb0oN5CYT4xPfKzGQOhzY2xMzCIFz6YMxE7urD5PRWzycteln+0sJndV/aVKbp/KXw9gHZNnEB2YyS868QJaMt70UOA3qn65XMscYnzsCl/EJu8gCrNlZ4XnjH0eplYT43vXgBS8tQrpVR5iOefEkvWc81Lhu7JzIQVefEklD7uDpA55eWdnMbnZWcUP7Xc3LjB31JdpFcd+Lx802+bDHT/vlIz9nnfHxHCr4pRs8/NRixvXTpZiOqX8TnDpbFJ1bEYO5fO1vvJh/HWtgBv8fLT8YRv2B3nWyOjtkIKfpPC70Z9CZMMRJwV6xDQlGa0JHY6C+heAbDgS7MMu0mdvPSi1BXEOJ9MfWfZuWa9TSi9fUGcD3XG0BfEuK59eqmPTMepYaz6or/M9FVQMIpNGVJ2uU115xq1Ot9EgVSLha+hErJzbsJYKzzsglqhzSacb/rN9cna6z/2eKeIyYhw+PSZmj4NkGZvjDsqvZRmbY0iKGQk3/QYSs7bx2S0NgQAAAABJRU5ErkJggg=="
+                      />
+                    </defs>
+                  </svg>
+                </div>
+                <div class="phoneText" id="63">
+                  г. Алматы Офис: Республика Казахстан, г.Алматы, мкр. Мамыр-4,
+                  дом 21, литер Б
+                </div>
+              </div>
+              <div class="work__hours" id="contact">
+                <span id="64"> </span>
+                <br /><br />
+                <p id="65">Пн - Пт / 9.00 - 18.00</p>
+              </div>
+            </div>
+            <div class="contact__right">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A55d740ee045f57301fbfbe03e514f5d77027578699a7d6852940c06c607520f2&amp;source=constructor"
+                width="500"
+                height="400"
+                frameborder="0"
+                class="map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p id="66">Все права защищены ©2024</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

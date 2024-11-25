@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=0
+    "
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Naviline</title>
+  </head>
+  <body onload="init()">
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <div class="header__left">
+            <div class="header__logo">
+              <img src="imgs/logo.png" alt="logo" onclick="navToMain()" />
+            </div>
+            <div class="header__search">
+              <input type="text" class="search__input" placeholder="Поиск..." />
+              <div class="search__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                >
+                  <path
+                    d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
+                    fill="white"
+                    fill-opacity="0.6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="header__center">
+            <div class="header__links">
+              <div href="/index.html" class="header__link">
+                <a href="/index.html" id="116">Главная</a>
+              </div>
+              <div href="/about.html" class="header__link">
+                <a href="/about.html" id="117">О компании</a>
+              </div>
+              <div href="/index.html" class="header__link">
+                <a href="/index.html#products" id="118">Продукты</a>
+              </div>
+              <div href="/index.html#62" class="header__link">
+                <a href="/index.html#62" id="119">Контакты</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="header__lang" onclick="openLanguageModal()">
+              <div class="lang__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                >
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C18.2279 28 21.25 21.9558 21.25 14.5C21.25 7.04416 18.2279 1 14.5 1C10.7721 1 7.75 7.04416 7.75 14.5C7.75 21.9558 10.7721 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28V1"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 28C21.9558 28 28 21.9558 28 14.5C28 7.04416 21.9558 1 14.5 1C7.04416 1 1 7.04416 1 14.5C1 21.9558 7.04416 28 14.5 28Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M14.5 21.25C21.9558 21.25 28 18.2279 28 14.5C28 10.7721 21.9558 7.75 14.5 7.75C7.04416 7.75 1 10.7721 1 14.5C1 18.2279 7.04416 21.25 14.5 21.25Z"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M1 14.5H28"
+                    stroke="white"
+                    stroke-opacity="0.7"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+              </div>
+              <div class="lang__text" id="lang4">RU</div>
+              <div class="language__modal" onclick="closeModal()" id="lmodal">
+                <div class="modal__inner">
+                  <div class="modal__item" onclick="changeLanguage(0)">RU</div>
+                  <div class="modal__item" onclick="changeLanguage(1)">EN</div>
+                  <div class="modal__item" onclick="changeLanguage(2)">KZ</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__menu" onclick="onMenuClick()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+              >
+                <rect width="21" height="21" fill="url(#pattern0_99_109)" />
+                <defs>
+                  <pattern
+                    id="pattern0_99_109"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_99_109" transform="scale(0.01)" />
+                  </pattern>
+                  <image
+                    id="image0_99_109"
+                    width="100"
+                    height="100"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjUlEQVR4nO3ZsQ3AMAwEMe2/dFK7N6CDQa5wlV4zAAAAAADAbR8pgsQIEiNIjCAxgsQIEiNIjCAxgsRcv/wBAAAAAAAA4BXbT31OgsQIEiNIjCAxgsQIEiNIjCAxgsRsDwUAAAAAAAAAkLX91OckSIwgMYLECBIjSIwgMYLECBIjSMz2UAAAAAAAAPOeH2tRs9OnzhAFAAAAAElFTkSuQmCC"
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__drop__menu" id="menu">
+        <div class="drop__menu__top">
+          <div class="drop__menu__logo">
+            <img src="imgs/drop__menu__logo.png" alt="" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              onclick="onCloseMenu()"
+            >
+              <rect width="21" height="21" fill="url(#pattern0_95_10)" />
+              <defs>
+                <pattern
+                  id="pattern0_95_10"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_95_10"
+                    transform="scale(0.0104167)"
+                  />
+                </pattern>
+                <image
+                  id="image0_95_10"
+                  width="96"
+                  height="96"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR4nO3cXW7TQBQF4EthJSDKT+a6FT8Kb6yC9WQRpXeYLVRCqqgQvCUzyXaAShWkwIPRpIlU1Ibaoe29Y59PylseZs7x2IltDREAAAAAAAAAAAAAAAAAQJnqmu5QwepSx/929nTXJ/dZEs8l8k8f+SiM3WMqxP5k8ESSO5TkjvMc8lz8dLBD5YTPJz5x/ffHfQupGpJxIVXDPNaL4+eTIkpYHC0XB7/45CPKcgkhVcM8xrXjj+4TWTaqaetsyV4+AcslhCvCPxs7z81fF3x0P/41CYslhAbhL1fAd7IuX7yumoilEkLD8Jcr4D1ZF2aDB2suYuZKCC3Cz3OSKd+nEoTIzyTyl6YlyJRf3fYYZcrPfeSvJRwonStBuh6+5RKkL+FbLEH6Fr6lEqSv4VsoQfoevmYJgvD1ShCEr1eCIHy9EgTh65UgCF+vBEH4eiUIwtcrQRC+XgmC8DUfkLjjNt/t7D9czZXgEb7tEgRHvl4JgvD1VoIgfL0SBOFfL2nxU7PNbQu4gfBRgoHwPVaCfvgeJeiH71FCewG3IvTIBjfWLLzy0gnyH3c1UYJi+CsoYUNyjffzUYJi+CsooaGbfJIVcGHWC38FJaxxm89wA1aCXvgrKGFJ8+2F0PeVYOHVkdDXEiyE39sSLIXfuxIsht+bEiyH3/kSZMaPurpVwV6qtsk6SfyxhPA3KiHyEVl2cPDm7mKLskLC3+B0dJrnSFaNxq/v+eR+lxR+mxIkul+mC8h85Elp4TffsozHZN3+ZPDy8m3Lyt60TxLP383cCyrBooTI4+Xp6FSi++Anuw+pEHup2s4X3Dz2PIc8l2LCPy+fL/NGflSoUU1b5s/5AAAAAAAAAAAAAAAAAAC01h9uRhW6QEMMHQAAAABJRU5ErkJggg=="
+                />
+              </defs>
+            </svg>
+          </div>
+          <div class="drop__menu__links">
+            <div class="drop__menu__link">
+              <a href="/index.html" id="120">Главная</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/about.html" id="121">О компании</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html#products" id="122">Продукты</a>
+            </div>
+            <div class="drop__menu__link">
+              <a href="/index.html" id="123">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="top__title__section tah mb100">
+      <div class="wrapper">
+        <div class="top__title__section__text" id="124">
+          ВЫПУСК КАРТ ДЛЯ ЦИФРОВОГО ТАХОГРАФА
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="tah__text__card">
+        <div class="tah__title__text" id="125">ТАХОГРАФ</div>
+        <div class="tah__text_text" id="126">
+          Это контрольное устройство, обеспечивающее выполнение требований
+          соглашения ЕСТР по осуществлению постоянного, автономного и
+          объективного контроля параметров, оговоренных в документах ЕСТР, таким
+          образом, чтобы обеспечить принципы неотвратимости наказания за
+          нарушения требований соглашения ЕСТР и равноправия всех сторон,
+          участвующих в соглашении ЕСТР.
+        </div>
+      </div>
+
+      <div class="tah__text__card">
+        <div class="tah__title__text" id="127">
+          КАРТА ВОДИТЕЛЯ ЕСТР. ЗАЧЕМ ОНА НУЖНА?
+        </div>
+        <div class="tah__text_text" id="128">
+          Это контрольное устройство, обеспечивающее выполнение требований
+          соглашения ЕСТР по осуществлению постоянного, автономного и
+          объективного контроля параметров, оговоренных в документах ЕСТР, таким
+          образом, чтобы обеспечить принципы неотвратимости наказания за
+          нарушения требований соглашения ЕСТР и равноправия всех сторон,
+          участвующих в соглашении ЕСТР.
+        </div>
+      </div>
+
+      <div class="tah__text__card">
+        <div class="tah__title__text" id="129">
+          ПОЛУЧЕНИЯ КАРТЫ ВОДИТЕЛЯ ЕСТР
+        </div>
+        <div class="tah__text_text" id="130">
+          Это контрольное устройство, обеспечивающее выполнение требований
+          соглашения ЕСТР по осуществлению постоянного, автономного и
+          объективного контроля параметров, оговоренных в документах ЕСТР, таким
+          образом, чтобы обеспечить принципы неотвратимости наказания за
+          нарушения требований соглашения ЕСТР и равноправия всех сторон,
+          участвующих в соглашении ЕСТР.
+        </div>
+      </div>
+
+      <div class="tah__text__card">
+        <div class="tah__title__text" id="131">Виды карт</div>
+        <div class="tah__image__cards">
+          <div class="tah__image__card">
+            <div class="tah__image__card__image">
+              <img src="imgs/karta_vod1.png" alt="" />
+            </div>
+            <div class="tah__image__card__title" id="132">КАРТА ВОДИТЕЛЯ</div>
+            <div class="tah__image__card__text" id="133">
+              Представляет собой электронный ключ для доступа к тахографу. Она
+              также является идентификатором личности человека, который
+              управляет транспортным средством.На карту наносится фотография и
+              подпись водителя, информация о держателе, срок действия карты.
+              Внутри себя ключ содержит и данные о водителе, и данные о
+              параметрах его работы за рулем: время движения и отдыха, скорость
+              перемещения автомобиля Карта водителя необходима для идентификации
+              водителя, хранения данных о периодах его работы и отдыха при
+              вождении транспортного средства, которое оборудовано цифровым
+              тахографом. Карта принадлежит водителю и никак не привязана к его
+              месту работы.Вы не сможете получить карту водителя ЕСТР дважды,
+              потому что на каждого водителя она выдаётся в единичном
+              экземпляре. У карты есть ограниченный срок работы, после чего её
+              нужно будет поменять на новую. Карта водителя ЕСТР подлежит замене
+              и в других случаях, например, если водитель сменил фамилию или
+              получил новые права. Никто не застрахован от утери или кражи
+              документов. В этом случае карта не обновляется, а выдаётся заново
+              с присвоением другого номера. При этом, водитель должен подать
+              заявление о блокировке утерянной карты.
+            </div>
+          </div>
+
+          <div class="tah__image__card">
+            <div class="tah__image__card__image">
+              <img src="imgs/karta_vod2.png" alt="" />
+            </div>
+            <div class="tah__image__card__title" id="134">
+              КАРТА ПРЕДПРИЯТИЯ
+            </div>
+            <div class="tah__image__card__text" id="135">
+              Карта выдается зарегистрированным на территории Республики
+              Казахстан индивидуальным предпринимателями и юридическим лицам вне
+              зависимости от формы собственности, осуществляющим или
+              намеревающимся осуществлять грузопассажирские автотранспортные
+              перевозки.Карта предприятия для тахографа выдается сроком на 5 лет
+              транспортным компаниям и организациям для контроля соблюдения
+              водителем транспортного средства предписанных законодательно
+              правил и требований. Является персонализированным электронным
+              ключом доступа и оформляется на руководителя транспортной
+              организации или службы, либо назначенного приказом ответственного
+              лица.С помощью карты представители компании получают возможность
+              выгрузить, распечатать, просмотреть, заблокировать или
+              разблокировать данные тахографа о движении, режиме работы
+              транспортного средства, для предотвращения утечки информации на
+              приборе сторонним лицам.ВНИМАНИЕ! Карта предприятия на тахограф
+              требуется только для обеспечения доступа к данным, записанным на
+              устройство, и не содержит никакой информации
+            </div>
+          </div>
+
+          <div class="tah__image__card">
+            <div class="tah__image__card__image">
+              <img src="imgs/karta_vod3.png" alt="" />
+            </div>
+            <div class="tah__image__card__title" id="136">КАРТА ВОДИТЕЛЯ</div>
+            <div class="tah__image__card__text" id="137">
+              Представляет собой электронный ключ для доступа к тахографу. Она
+              также является идентификатором личности человека, который
+              управляет транспортным средством.На карту наносится фотография и
+              подпись водителя, информация о держателе, срок действия карты.
+              Внутри себя ключ содержит и данные о водителе, и данные о
+              параметрах его работы за рулем: время движения и отдыха, скорость
+              перемещения автомобиля Карта водителя необходима для идентификации
+              водителя, хранения данных о периодах его работы и отдыха при
+              вождении транспортного средства, которое оборудовано цифровым
+              тахографом. Карта принадлежит водителю и никак не привязана к его
+              месту работы.Вы не сможете получить карту водителя ЕСТР дважды,
+              потому что на каждого водителя она выдаётся в единичном
+              экземпляре. У карты есть ограниченный срок работы, после чего её
+              нужно будет поменять на новую. Карта водителя ЕСТР подлежит замене
+              и в других случаях, например, если водитель сменил фамилию или
+              получил новые права. Никто не застрахован от утери или кражи
+              документов. В этом случае карта не обновляется, а выдаётся заново
+              с присвоением другого номера. При этом, водитель должен подать
+              заявление о блокировке утерянной карты.
+            </div>
+          </div>
+
+          <div class="tah__image__card">
+            <div class="tah__image__card__image">
+              <img src="imgs/karta_vod4.png" alt="" />
+            </div>
+            <div class="tah__image__card__title" id="138">
+              КАРТА СЕРВИСНОГО ЦЕНТРА
+            </div>
+            <div class="tah__image__card__text" id="139">
+              Карта мастерской выдается сроком на 1 год техникам мастерской,
+              которые устанавливают, активируют и калибруют цифровые тахографы.
+              Карта выдаётся в единственном экземпляре только тем лицам, которые
+              обладают необходимой компетенцией и соответствующими документами,
+              удостоверяющими право обслуживания цифровых тахографов и работают
+              в соответственно аккредитованной мастерской. Для работы с картой
+              необходим PIN код. Пин код есть только у карты мастерской.Выдается
+              физическим лицам, работающим в сервисных центрах по установке и
+              обслуживанию тахографов и удовлетворяющих требованиям,
+              предъявляемым к ним в соответствии с пунктом 97 Правил организации
+              труда и отдыха водителей, а также применения тахографов на
+              территории Республики Казахстан
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p id="140">Все права защищены ©2024</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
