@@ -34,6 +34,11 @@ function closeModal() {
 
 function init() {
   const lang = localStorage.getItem("lang");
+  if (lang == null) {
+    localStorage.setItem("lang", 2);
+    changeLanguage(2);
+    return;
+  }
   changeLanguage(Number(lang));
 }
 
