@@ -11,25 +11,15 @@
       user-scalable=0
     "
     />
-    <link
-      rel="stylesheet"
-      href="style.css"
-    />
+    <link rel="stylesheet" href="style.css" />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Naviline</title>
+    <title>Навилайн</title>
   </head>
   <body onload="init()">
     <header class="header">
@@ -37,18 +27,10 @@
         <div class="header__inner">
           <div class="header__left">
             <div class="header__logo">
-              <img
-                src="imgs/logo.png"
-                alt="logo"
-                onclick="navToMain()"
-              />
+              <img src="imgs/logo.png" alt="logo" onclick="navToMain()" />
             </div>
             <div class="header__search">
-              <input
-                type="text"
-                class="search__input"
-                placeholder="Поиск..."
-              />
+              <input type="text" class="search__input" placeholder="Поиск..." />
               <div class="search__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,53 +50,22 @@
           </div>
           <div class="header__center">
             <div class="header__links">
-              <div
-                href="/index.html"
-                class="header__link"
-              >
-                <a
-                  href="/index.html"
-                  id="1"
-                  >Главная</a
-                >
+              <div href="/index.html" class="header__link">
+                <a href="/index.html" id="1">Главная</a>
               </div>
-              <div
-                href="/about.html"
-                class="header__link"
-              >
-                <a
-                  href="/about.html"
-                  id="2"
-                  >О компании</a
-                >
+              <div href="/about.html" class="header__link">
+                <a href="/about.html" id="2">О компании</a>
               </div>
-              <div
-                href="/index.html"
-                class="header__link"
-              >
-                <a
-                  href="/index.html#products"
-                  id="3"
-                  >Продукты</a
-                >
+              <div href="/index.html" class="header__link">
+                <a href="/index.html#products" id="3">Продукты</a>
               </div>
-              <div
-                href="/index.html#62"
-                class="header__link"
-              >
-                <a
-                  href="/index.html#62"
-                  id="4"
-                  >Контакты</a
-                >
+              <div href="/index.html#62" class="header__link">
+                <a href="/index.html#62" id="4">Контакты</a>
               </div>
             </div>
           </div>
           <div class="header__right">
-            <div
-              class="header__lang"
-              onclick="openLanguageModal()"
-            >
+            <div class="header__lang" onclick="openLanguageModal()">
               <div class="lang__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -161,43 +112,16 @@
                   />
                 </svg>
               </div>
-              <div
-                class="lang__text"
-                id="lang"
-              >
-                RU
-              </div>
-              <div
-                class="language__modal"
-                onclick="closeModal()"
-                id="lmodal"
-              >
+              <div class="lang__text" id="lang">RU</div>
+              <div class="language__modal" onclick="closeModal()" id="lmodal">
                 <div class="modal__inner">
-                  <div
-                    class="modal__item"
-                    onclick="changeLanguage(0)"
-                  >
-                    RU
-                  </div>
-                  <div
-                    class="modal__item"
-                    onclick="changeLanguage(1)"
-                  >
-                    EN
-                  </div>
-                  <div
-                    class="modal__item"
-                    onclick="changeLanguage(2)"
-                  >
-                    KZ
-                  </div>
+                  <div class="modal__item" onclick="changeLanguage(0)">RU</div>
+                  <div class="modal__item" onclick="changeLanguage(1)">EN</div>
+                  <div class="modal__item" onclick="changeLanguage(2)">KZ</div>
                 </div>
               </div>
             </div>
-            <div
-              class="header__menu"
-              onclick="onMenuClick()"
-            >
+            <div class="header__menu" onclick="onMenuClick()">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -206,11 +130,7 @@
                 viewBox="0 0 21 21"
                 fill="none"
               >
-                <rect
-                  width="21"
-                  height="21"
-                  fill="url(#pattern0_99_109)"
-                />
+                <rect width="21" height="21" fill="url(#pattern0_99_109)" />
                 <defs>
                   <pattern
                     id="pattern0_99_109"
@@ -218,10 +138,7 @@
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_99_109"
-                      transform="scale(0.01)"
-                    />
+                    <use xlink:href="#image0_99_109" transform="scale(0.01)" />
                   </pattern>
                   <image
                     id="image0_99_109"
@@ -235,16 +152,10 @@
           </div>
         </div>
       </div>
-      <div
-        class="header__drop__menu"
-        id="menu"
-      >
+      <div class="header__drop__menu" id="menu">
         <div class="drop__menu__top">
           <div class="drop__menu__logo">
-            <img
-              src="imgs/drop__menu__logo.png"
-              alt=""
-            />
+            <img src="imgs/drop__menu__logo.png" alt="" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -254,11 +165,7 @@
               fill="none"
               onclick="onCloseMenu()"
             >
-              <rect
-                width="21"
-                height="21"
-                fill="url(#pattern0_95_10)"
-              />
+              <rect width="21" height="21" fill="url(#pattern0_95_10)" />
               <defs>
                 <pattern
                   id="pattern0_95_10"
@@ -282,32 +189,16 @@
           </div>
           <div class="drop__menu__links">
             <div class="drop__menu__link">
-              <a
-                href="/index.html"
-                id="5"
-                >Главная</a
-              >
+              <a href="/index.html" id="5">Главная</a>
             </div>
             <div class="drop__menu__link">
-              <a
-                href="/about.html"
-                id="6"
-                >О компании</a
-              >
+              <a href="/about.html" id="6">О компании</a>
             </div>
             <div class="drop__menu__link">
-              <a
-                href="/index.html#products"
-                id="7"
-                >Продукты</a
-              >
+              <a href="/index.html#products" id="7">Продукты</a>
             </div>
             <div class="drop__menu__link">
-              <a
-                href="/index.html"
-                id="8"
-                >Контакты</a
-              >
+              <a href="/index.html" id="8">Контакты</a>
             </div>
           </div>
         </div>
@@ -315,18 +206,13 @@
     </header>
     <div class="top__title__section">
       <div class="wrapper">
-        <div
-          class="top__title__section__text"
-          id="9"
-        >
-          О КОМПАНИИ
-        </div>
+        <div class="top__title__section__text" id="9">О КОМПАНИИ</div>
       </div>
     </div>
     <section>
       <div class="wrapper">
         <div class="about__first__text">
-          <span id="10">ТОО </span><span class="color__green">«NAVILINE»</span
+          <span id="10">ТОО </span><span class="color__green">«Навилайн»</span
           ><span id="11">
             - молодая, динамично развивающаяся компания, ведущая разработки в
             области инновационных технологий. Мы располагаем всеми необходимыми
@@ -341,9 +227,7 @@
             Компания поставила перед собой задачу по разработке и запуску в
             производство УВЭОС. В рамках данной задачи был инициирован проект
           </span>
-          <span
-            class="color__green"
-            id="13"
+          <span class="color__green" id="13"
             >«Разработка бортового терминала устройства вызова экстренных
             оперативных служб (УВЭОС) и организация его производства»</span
           >
@@ -691,10 +575,7 @@
                 результатам испытаний сформирован и утвержден окончательный
                 вариант промышленного образца УВЭОС. (Подробнее в разделе –
               </span>
-              <a
-                href="http://nvl.kz/evak.html"
-                target="_blank"
-                id="29"
+              <a href="http://nvl.kz/evak.html" target="_blank" id="29"
                 >Система экстренных вызовов</a
               >).
             </div>
@@ -723,10 +604,7 @@
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_111_51"
-                      transform="scale(0.02)"
-                    />
+                    <use xlink:href="#image0_111_51" transform="scale(0.02)" />
                   </pattern>
                   <image
                     id="image0_111_51"
@@ -742,10 +620,7 @@
                 Также, нами ведется работа по оптимизации системы мониторинга
                 транзитных грузов. (Подробнее в разделе –
               </span>
-              <a
-                href="http://nvl.kz/itst.html"
-                target="_blank"
-                id="31"
+              <a href="http://nvl.kz/itst.html" target="_blank" id="31"
                 >ИТС Транзит</a
               >)
             </div>
@@ -761,11 +636,7 @@
                 viewBox="0 0 50 50"
                 fill="none"
               >
-                <rect
-                  width="50"
-                  height="50"
-                  fill="url(#pattern0_111_52)"
-                />
+                <rect width="50" height="50" fill="url(#pattern0_111_52)" />
                 <defs>
                   <pattern
                     id="pattern0_111_52"
@@ -795,10 +666,7 @@
                 изготовлению карт-тахографов (бортовых контрольных устройств).
                 (Подробнее в разделе –
               </span>
-              <a
-                href="http://nvl.kz/tahografy.html"
-                target="_blank"
-                id="33"
+              <a href="http://nvl.kz/tahografy.html" target="_blank" id="33"
                 >Карточки для тахографов</a
               >)
             </div>
